@@ -23,6 +23,7 @@ atexit.register(m.stop)
 @app.route('/hello/<name>', methods=['GET'])
 def hello(name):
     return jsonify(message="Hello {} from a Mobius deployed service!".format(name),
+                   ip=os.getenv('DATAWIRE_ROUTABLE_HOST'),
                    time=int(round(time.time() * 1000)))
 
 
