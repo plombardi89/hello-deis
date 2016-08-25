@@ -11,8 +11,8 @@ app = Flask(__name__)
 
 m = mdk.init()
 
-service_name = os.getenv('MDK_SERVICE_NAME')
-service_vers = os.getenv('MDK_SERVICE_VERSION')
+service_name = os.getenv('MDK_SERVICE_NAME', 'none')
+service_vers = os.getenv('MDK_SERVICE_VERSION', 'none')
 m.register(service_name, service_vers, "http://{}:{}".format(os.getenv('DATAWIRE_ROUTABLE_HOST'), 5000))
 
 m.start()
