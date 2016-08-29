@@ -1,0 +1,8 @@
+{
+    "_datawirefileVersion": 1,
+
+    "service": {
+        "name": "mobius",
+        "version": "0.5.0"
+    }
+}
