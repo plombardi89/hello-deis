@@ -3,8 +3,8 @@
 VERSION=$(shell cat VERSION)
 QUARK_REQUIREMENTS=$(shell sed -e '/^[[:space:]]*$$/d' -e '/^[[:space:]]*\#/d' requirements-quark.txt | tr '\n' ' ' )
 
-DOCKER_REGISTRY_HOST="us.gcr.io"
-DOCKER_REPO="datawireio/hello-mobius"
+DOCKER_REGISTRY_HOST=us.gcr.io
+DOCKER_REPO=datawireio/datawire-mobius
 
 .PHONY: all
 
