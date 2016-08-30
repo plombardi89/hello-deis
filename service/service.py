@@ -13,7 +13,8 @@ m = mdk.init()
 
 service_name = os.getenv('MDK_SERVICE_NAME', 'none')
 service_vers = os.getenv('MDK_SERVICE_VERSION', 'none')
-m.register(service_name, service_vers, "http://{}:{}".format(os.getenv('DATAWIRE_ROUTABLE_HOST'), 5000))
+m.register(service_name, service_vers, "http://{}:{}".format(os.getenv('DATAWIRE_ROUTABLE_HOST'),
+                                                             int(os.getenv('DATAWIRE_ROUTABLE_PORT'))))
 
 m.start()
 
@@ -22,7 +23,7 @@ atexit.register(m.stop)
 
 @app.route('/hello/<name>', methods=['GET'])
 def hello(name):
-    return jsonify(message="Hello {} from a Mobius deployed service! Returns again!".format(name),
+    return jsonify(message="Hello {} from a Mobius deployed service!".format(name),
                    ip=os.getenv('DATAWIRE_ROUTABLE_HOST'),
                    time=int(round(time.time() * 1000)))
 
