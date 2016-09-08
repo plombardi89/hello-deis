@@ -44,4 +44,4 @@ RUN mv /opt/datawire/hello-mobius/config/nginx.conf /etc/nginx/nginx.conf
 COPY service/ ./service
 
 EXPOSE 5000
-ENTRYPOINT ["./entrypoint.sh"]
+CMD ["./entrypoint.sh"]
